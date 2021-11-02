@@ -42,7 +42,7 @@ wc <- wordcloud2::wordcloud2(tweets,size =1, color = 'black', backgroundColor = 
 htmlwidgets::saveWidget(wc, here::here('misc/1.html'),selfcontained = F)
 webshot::install_phantomjs()
 webshot::webshot(here::here('misc/1.html'), here::here('fig/file.png'),
-                 vwidth = 1024, vheight = 512, delay =10)
+                 vwidth = 1024, vheight = 512, delay =50)
 
 #post tweet
 post_tweet(status = as.character(Sys.Date()), media = here::here('fig/file.png'))
