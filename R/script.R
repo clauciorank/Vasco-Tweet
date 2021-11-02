@@ -40,6 +40,7 @@ tweets <- tweets[nchar(tweets$tweets) > 2 & tweets$tweets != 'VASCO',]
 
 wc <- wordcloud2::wordcloud2(tweets,size =1, color = 'black', backgroundColor = 'white')
 htmlwidgets::saveWidget(wc, here::here('misc/1.html'),selfcontained = F)
+webshot::install_phantomjs()
 webshot::webshot(here::here('misc/1.html'), here::here('fig/file.png'),
                  vwidth = 1024, vheight = 512, delay =10)
 
